@@ -109,31 +109,31 @@ function engineerInfoPrompt() {
     return inquirer
     .prompt([
         {
-            message: "What is your manager's name?",
+            message: "What is the engineer's name?",
             name: "name",
             type: "input"
         },
         {
-            message: "What is your manager's id?",
+            message: "What is the engineer's id?",
             name: "id",
             type: "input"
         },
         {
-            message: "What is your manager's email?",
+            message: "What is the engineer's email?",
             name: "email",
             type: "input"
         },
         {
-            message: "What is your manager's office number?",
-            name: "officeNumber",
+            message: "What is the engineer's GitHub username?",
+            name: "github",
             type: "input"
         },
     ])
-    .then((managerData) => {
+    .then((engineerData) => {
 
-        const newManager = new Manager (managerData.name, managerData.id, managerData.email, managerData.officeNumber);
+        const newEngineer = new Engineer (engineerData.name, engineerData.id, engineerData.email, engineerData.github);
 
-        teamData.push(newManager);
+        teamData.push(newEngineer);
 
         employeeTypePrompt();
     });
