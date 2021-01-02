@@ -1,4 +1,4 @@
-// Require other files
+// Require class files
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
@@ -8,9 +8,11 @@ const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
 
+// Create specific paths for output file
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
+// Require render file
 const render = require("./lib/htmlRenderer");
 
 // Empty array to store team data from information user provided
@@ -22,7 +24,7 @@ function managerInfoPrompt() {
     return inquirer
         .prompt([
             {
-                message: "What is your manager's name?",
+                message: "What is your manager's full name?",
                 name: "name",
                 type: "input"
             },
@@ -37,7 +39,7 @@ function managerInfoPrompt() {
                 type: "input"
             },
             {
-                message: "What is your manager's office number?",
+                message: "What is your manager's office phone number? e.g. (321) 867-5309",
                 name: "officeNumber",
                 type: "input"
             },
@@ -61,7 +63,7 @@ function employeeTypePrompt() {
             message: "Which type of team member would you like to add?",
             name: "employeeType",
             type: "list",
-            choices: ["Engineer", "Intern", "No other team members to add"]
+            choices: ["Engineer", "Intern", "I'm all done! I have no other team members to add."]
         }
     ])
     .then((newEmployee) => {
@@ -88,7 +90,6 @@ function renderHTML() {
 
     const teamDataHTML = render(teamData);
 
-    // fs.writeFile("team.html", teamDataHTML, (err) => {
     fs.writeFile(outputPath, teamDataHTML, (err) => {
         if (err) throw err;
         console.log("Team HTML file created successfully in `output` directory.")
@@ -101,7 +102,7 @@ function engineerInfoPrompt() {
     return inquirer
     .prompt([
         {
-            message: "What is the engineer's name?",
+            message: "What is the engineer's full name?",
             name: "name",
             type: "input"
         },
@@ -137,7 +138,7 @@ function internInfoPrompt() {
     return inquirer
     .prompt([
         {
-            message: "What is the intern's name?",
+            message: "What is the intern's full name?",
             name: "name",
             type: "input"
         },
@@ -152,7 +153,7 @@ function internInfoPrompt() {
             type: "input"
         },
         {
-            message: "What is the intern's school?",
+            message: "What is the intern's current school?",
             name: "school",
             type: "input"
         },
