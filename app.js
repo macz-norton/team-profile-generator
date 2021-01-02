@@ -79,9 +79,21 @@ function employeeTypePrompt() {
             internInfoPrompt();
 
         } else (newEmployee.choices == "No other team members to add") {
-            // Exit
+            
+            renderHTML();
+            
         }
 
+    });
+}
+
+function renderHTML() {
+
+    const teamDataHTML = render(teamData);
+
+    fs.writeFile("team.html", teamDataHTML, (err) => {
+        if (err) throw err;
+        console.log("Team HTML file created successfully in `output` directory.")
     });
 }
 
@@ -189,3 +201,5 @@ function internInfoPrompt() {
 // for further information. Be sure to test out each class and verify it generates an
 // object with the correct structure and methods. This structure will be crucial in order
 // for the provided `render` function to work! ```
+
+// Other ideas: console log formatting, modularize inquirer
