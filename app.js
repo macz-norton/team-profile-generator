@@ -66,11 +66,11 @@ function employeeTypePrompt() {
     ])
     .then((newEmployee) => {
 
-        if (newEmployee.choices == "Engineer") {
+        if (newEmployee.employeeType === "Engineer") {
 
             engineerInfoPrompt();
 
-        } else if (newEmployee.choices == "Intern") {
+        } else if (newEmployee.employeeType === "Intern") {
 
             internInfoPrompt();
 
