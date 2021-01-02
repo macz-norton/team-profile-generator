@@ -50,7 +50,7 @@ function managerInfoPrompt() {
 
             teamData.push(newManager);
 
-            console.log("New manager data saved.")
+            console.log("New manager data saved.");
 
             employeeTypePrompt();
         });
@@ -94,7 +94,7 @@ function renderHTML() {
 
     fs.writeFile(outputPath, teamDataHTML, (err) => {
         if (err) throw err;
-        console.log("Team HTML file created successfully in `output` directory.")
+        console.log("Team HTML file created successfully in `output` directory.");
     });
 }
 
@@ -130,7 +130,7 @@ function engineerInfoPrompt() {
 
         teamData.push(newEngineer);
 
-        console.log("New engineer data saved.")
+        console.log("New engineer data saved.");
 
         employeeTypePrompt();
     });
@@ -168,7 +168,7 @@ function internInfoPrompt() {
 
         teamData.push(newIntern);
 
-        console.log("New intern data saved.")
+        console.log("New intern data saved.");
 
         employeeTypePrompt();
     });
@@ -176,5 +176,3 @@ function internInfoPrompt() {
 
  // Start the initial inquirer prompt
  managerInfoPrompt();
-
-// Other ideas: console log formatting, modularize inquirer
