@@ -48,6 +48,8 @@ function managerInfoPrompt() {
             const newManager = new Manager (managerData.name, managerData.id, managerData.email, managerData.officeNumber);
 
             teamData.push(newManager);
+
+            employeeTypePrompt();
         });
 }
 
