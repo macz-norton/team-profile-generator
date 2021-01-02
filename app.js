@@ -149,37 +149,38 @@ function internInfoPrompt() {
     return inquirer
     .prompt([
         {
-            message: "What is your manager's name?",
+            message: "What is the intern's name?",
             name: "name",
             type: "input"
         },
         {
-            message: "What is your manager's id?",
+            message: "What is the intern's id?",
             name: "id",
             type: "input"
         },
         {
-            message: "What is your manager's email?",
+            message: "What is the intern's email?",
             name: "email",
             type: "input"
         },
         {
-            message: "What is your manager's office number?",
-            name: "officeNumber",
+            message: "What is the intern's school?",
+            name: "school",
             type: "input"
         },
     ])
-    .then((managerData) => {
+    .then((internData) => {
 
-        const newManager = new Manager (managerData.name, managerData.id, managerData.email, managerData.officeNumber);
+        const newIntern = new Intern (internData.name, internData.id, internData.email, internData.school);
 
-        teamData.push(newManager);
+        teamData.push(newIntern);
 
         employeeTypePrompt();
     });
  }
 
  managerInfoPrompt();
+ 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 
