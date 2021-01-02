@@ -15,10 +15,18 @@ const render = require("./lib/htmlRenderer");
 // ? What is your manager's name?
 // ? What is your manager's id?
 // ? What is your manager's email?
+function managerInfoPrompt() {
+
+}
+
 // ? Which type of team member would you like to add? 
     // Engineer
     // Intern
     // No other team members to add
+function employeeTypePrompt() {
+
+}
+
 
 // Engineer
 // ? What is the engineer's name?
@@ -26,12 +34,18 @@ const render = require("./lib/htmlRenderer");
 // ? What is the engineer's email?
 // ? What is the engineer's GitHub username?
 
+function engineerInfoPrompt() {
+
+}
+
 // Intern
 // ? What is the intern's name?
 // ? What is the intern's id?
 // ? What is the intern's email?
 // ? What is the intern's school?
+function internInfoPrompt() {
 
+ }
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
