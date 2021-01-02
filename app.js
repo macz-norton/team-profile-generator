@@ -10,13 +10,45 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
+const teamData = [];
+
 // Inquirer
 // Please build your team
 // ? What is your manager's name?
 // ? What is your manager's id?
 // ? What is your manager's email?
+// ? What is your manager's office number?
 function managerInfoPrompt() {
 
+    return inquirer
+        .prompt([
+            {
+                message: "What is your manager's name?",
+                name: "name",
+                type: "input"
+            },
+            {
+                message: "What is your manager's id?",
+                name: "id",
+                type: "input"
+            },
+            {
+                message: "What is your manager's email?",
+                name: "email",
+                type: "input"
+            },
+            {
+                message: "What is your manager's office number?",
+                name: "officeNumber",
+                type: "input"
+            },
+        ])
+        .then((managerData) => {
+
+            const newManager = new Manager (managerData.name, managerData.id, managerData.email, managerData.officeNumber);
+
+            teamData.push(newManager);
+        });
 }
 
 // ? Which type of team member would you like to add? 
