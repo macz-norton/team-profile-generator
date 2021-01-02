@@ -38,7 +38,7 @@ You will be prompted with questions about your team and your answers will be use
 
 1. When you run the application, it will prompt you for information about the team manager and then information about the team members. 
 2. You can input any number of team members, and they may be a mix of engineers and interns. 
-3. All unit tests pass.
+3. All unit tests pass when you run `npm test` in the integrated terminal.
 4. When you have completed building the team, the application will create an HTML file that displays a team roster based on the information you provided. 
 
 ## Credits
