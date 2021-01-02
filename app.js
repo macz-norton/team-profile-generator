@@ -74,7 +74,7 @@ function employeeTypePrompt() {
 
             internInfoPrompt();
 
-        } else (newEmployee.choices == "No other team members to add") {
+        } else {
             
             renderHTML();
             
