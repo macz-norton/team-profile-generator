@@ -50,6 +50,8 @@ function managerInfoPrompt() {
 
             teamData.push(newManager);
 
+            console.log("New manager data saved.")
+
             employeeTypePrompt();
         });
 }
@@ -128,6 +130,8 @@ function engineerInfoPrompt() {
 
         teamData.push(newEngineer);
 
+        console.log("New engineer data saved.")
+
         employeeTypePrompt();
     });
 }
@@ -163,6 +167,8 @@ function internInfoPrompt() {
         const newIntern = new Intern (internData.name, internData.id, internData.email, internData.school);
 
         teamData.push(newIntern);
+
+        console.log("New intern data saved.")
 
         employeeTypePrompt();
     });
