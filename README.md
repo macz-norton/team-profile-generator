@@ -30,9 +30,9 @@ so that I have quick access to emails and GitHub profiles
 To run the command-line application following installation, run `node app.js` in your terminal.
 
 You will be prompted with questions about your team and your answers will be used to build the `team.html` file generated in the `output` folder:
-* Video that demonstrates the application's functionality: watch video
-* Inquirer prompt questions in the user's terminal: ![Terminal screenshot](ADD IMAGE)
-* Output HTML file from prompted questions: ![Team profile HTML page](ADD IMAGE)
+* Video that demonstrates the application's functionality: [watch video](https://user-images.githubusercontent.com/71162422/103465483-ae982280-4cf0-11eb-96a0-132fafe022b9.mp4)
+* Inquirer prompt questions in the user's terminal: ![Terminal screenshot](https://user-images.githubusercontent.com/71162422/103465488-c1125c00-4cf0-11eb-9dd0-9492d6a5b99a.png)
+* Output HTML file from prompted questions: ![Team profile HTML page](https://user-images.githubusercontent.com/71162422/103465494-cbccf100-4cf0-11eb-9173-57e90530b7d5.png)
 
 ## Tests
 
