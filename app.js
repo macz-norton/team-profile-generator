@@ -59,6 +59,30 @@ function managerInfoPrompt() {
     // No other team members to add
 function employeeTypePrompt() {
 
+    return inquirer
+    .prompt([
+        {
+            message: "Which type of team member would you like to add?",
+            name: "employeeType",
+            type: "list",
+            choices: ["Engineer", "Intern", "No other team members to add"]
+        }
+    ])
+    .then((newEmployee) => {
+
+        if (newEmployee.choices == "Engineer") {
+
+            engineerInfoPrompt();
+
+        } else if (newEmployee.choices == "Intern") {
+
+            internInfoPrompt();
+
+        } else (newEmployee.choices == "No other team members to add") {
+            // Exit
+        }
+
+    });
 }
 
 
@@ -70,6 +94,37 @@ function employeeTypePrompt() {
 
 function engineerInfoPrompt() {
 
+    return inquirer
+    .prompt([
+        {
+            message: "What is your manager's name?",
+            name: "name",
+            type: "input"
+        },
+        {
+            message: "What is your manager's id?",
+            name: "id",
+            type: "input"
+        },
+        {
+            message: "What is your manager's email?",
+            name: "email",
+            type: "input"
+        },
+        {
+            message: "What is your manager's office number?",
+            name: "officeNumber",
+            type: "input"
+        },
+    ])
+    .then((managerData) => {
+
+        const newManager = new Manager (managerData.name, managerData.id, managerData.email, managerData.officeNumber);
+
+        teamData.push(newManager);
+
+        employeeTypePrompt();
+    });
 }
 
 // Intern
@@ -79,6 +134,37 @@ function engineerInfoPrompt() {
 // ? What is the intern's school?
 function internInfoPrompt() {
 
+    return inquirer
+    .prompt([
+        {
+            message: "What is your manager's name?",
+            name: "name",
+            type: "input"
+        },
+        {
+            message: "What is your manager's id?",
+            name: "id",
+            type: "input"
+        },
+        {
+            message: "What is your manager's email?",
+            name: "email",
+            type: "input"
+        },
+        {
+            message: "What is your manager's office number?",
+            name: "officeNumber",
+            type: "input"
+        },
+    ])
+    .then((managerData) => {
+
+        const newManager = new Manager (managerData.name, managerData.id, managerData.email, managerData.officeNumber);
+
+        teamData.push(newManager);
+
+        employeeTypePrompt();
+    });
  }
 
 // Write code to use inquirer to gather information about the development team members,
